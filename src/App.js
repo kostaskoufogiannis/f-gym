@@ -1,9 +1,15 @@
 import React from "react";
-import Home from "./pages/Home";
 import "./App.css";
+import Header from "./components/layout/Header";
+import Main from "./components/layout/Main";
 
 const App = () => {
-  return <Home />;
+  return (
+    <div>
+      <Header />
+      <Main />
+    </div>
+  );
 };
 
 export default App;
