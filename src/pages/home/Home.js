@@ -22,9 +22,9 @@ const sections = [
 
 const Home = () => {
   const [currentSection, setCurrentSection] = useState(0);
-  const [sectionHeight, setSectionHeight] = useState(window.innerHeight);
-  const [transitionDurations, setTransitionDuration] = useState(1000);
-  const [scrolling, setScrolling] = useState(false);
+  const [sectionHeight] = useState(window.innerHeight);
+  const [transitionDurations] = useState(1000);
+  // const [scrolling, setScrolling] = useState(false);
 
   // useEffect(() => {
   //   if (!scrolling) return;
