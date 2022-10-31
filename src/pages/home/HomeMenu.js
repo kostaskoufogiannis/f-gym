@@ -1,18 +1,21 @@
 import classNames from "classnames";
 
-const HomeMenu = ({ items, currentSectionId, onClick }) => {
+const HomeMenu = ({ items, currentSection, onClick }) => {
   return (
-    <div>
+    <div className="w-10 mx-auto">
       {items.map((item, index) => (
         <div
           key={index}
           onClick={() => onClick(item.id)}
-          className={classNames(
-            "border-t-4 border-black transition-all cursor-pointer",
-            currentSectionId === item.id ? "w-10" : "w-6",
-            index !== items?.length - 1 ? "pt-5" : ""
-          )}
-        ></div>
+          className={classNames("cursor-pointer h-7 flex items-center")}
+        >
+          <div
+            className={classNames(
+              "bg-white transition-all cursor-pointer h-1",
+              currentSection.id === item.id ? "w-10" : "w-6"
+            )}
+          ></div>
+        </div>
       ))}
     </div>
   );

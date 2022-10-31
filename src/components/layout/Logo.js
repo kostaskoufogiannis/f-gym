@@ -1,6 +1,6 @@
 import classNames from "classnames";
 
-const Logo = ({ dark = false }) => {
+const Logo = ({ dark = true }) => {
   return (
     <div className="flex font-bold text-3xl">
       <span className="text-green-400">F</span>
