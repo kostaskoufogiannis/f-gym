@@ -2,15 +2,15 @@ import { useEffect, useState } from "react";
 import { ArrowLeft } from "../../../components/icons/ArrowLeft";
 import { ArrowRight } from "../../../components/icons/ArrowRight";
 import SectionTitle from "../SectionTitle";
-import Img1 from "../../../programs/1.jpg";
-import Img2 from "../../../programs/2.jpg";
-import Img3 from "../../../programs/3.jpg";
+import Img1 from "../../../assets/programs/1.jpg";
+import Img2 from "../../../assets/programs/2.jpg";
+import Img3 from "../../../assets/programs/3.jpg";
 // import Img4 from "../../../programs/4.jpg";
 
 const programs = [
   {
     id: "group",
-    title: "Ομαδικά",
+    title: "ΟΜΑΔΙΚΑ",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
     img: Img1,
@@ -26,7 +26,7 @@ const programs = [
     id: "emom",
     title: "EMOM",
     description:
-      "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.",
+      "Οι προπονήσεις EMOM μπορούν να κάνουν focus στην αντοχή ή περισσότερο στη δύναμη και συνήθως διαρκούν από 4 έως 45 λεπτά. Μία προπόνηση EMOM  μπορεί να γίνει με το βάρος του σώματος ή να έχει εξοπλισμό, ανάλογα με τους στόχους σου. Συνήθως, μία προπόνηση που στοχεύει στο καρδιαναπνευστικό σύστημα περιλαμβάνει υψηλότερο αριθμό επαναλήψεων και λίγα (ή ελαφριά) βάρη.",
     img: Img3,
   },
 ];

@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import About from "./sections/About";
 import Contact from "./sections/Contact";
 import HomeMenu from "./HomeMenu";
@@ -7,71 +7,66 @@ import Programs from "./sections/Programs";
 import Splash from "./sections/Splash";
 import "./home.css";
 
-// const enum Scenes = {
-//   SPLASH,
-//   PROGRAMS,
-//   ABOUT
-// }
-
 const sections = [
-  { id: "splash", component: () => <Splash /> },
+  { id: "splash", component: () => <Splash />, dark: true },
   { id: "programs", component: () => <Programs />, dark: true },
-  { id: "about", component: () => <About /> },
+  { id: "about", component: () => <About />, dark: true },
   { id: "contact", component: () => <Contact />, dark: true },
 ];
 
 const Home = () => {
   const [currentSection, setCurrentSection] = useState(0);
-  const [sectionHeight] = useState(window.innerHeight);
+  const [sectionHeight, setSectionHeight] = useState(window.innerHeight);
   const [transitionDurations] = useState(1000);
-  // const [scrolling, setScrolling] = useState(false);
 
-  // useEffect(() => {
-  //   if (!scrolling) return;
-  //   setTimeout(() => setScrolling(false), 1000);
-  // }, [scrolling]);
+  useEffect(() => {
+    console.log(currentSection);
 
-  // window.addEventListener(
-  //   "wheel",
-  //   (event) => {
-  //     console.log("scroll");
-  //     console.log(scrolling);
-  //     console.log(currentSection);
+    let scrolling = false;
+    const onScroll = (event) => {
+      if (scrolling) {
+        console.log("caught you!");
+        return;
+      }
+      scrolling = true;
 
-  //     if (scrolling) return;
+      setTimeout(() => (scrolling = false), 1000);
+      console.log(`currentSection -> ${currentSection}`);
+      // scroll down
+      if (event.deltaY > 0 && currentSection < sections?.length - 1) {
+        setCurrentSection((prev) => prev + 1);
+      }
+      // scroll up
+      else if (event.deltaY < 0 && currentSection > 0) {
+        setCurrentSection((prev) => prev - 1);
+      }
+    };
 
-  //     // scroll down
-  //     if (event.deltaY > 0 && currentSection < sections?.length - 1) {
-  //       setScrolling(true);
-  //       setCurrentSection((prev) => prev + 1);
-  //     }
-  //     // scroll up
-  //     else if (event.deltaY < 0 && currentSection > 0) {
-  //       setScrolling(true);
-  //       setCurrentSection((prev) => prev - 1);
-  //     }
-  //   },
-  //   false
-  // );
+    const onResize = (event) => {
+      setSectionHeight(window.innerHeight);
+    };
 
-  // window.addEventListener("resize", () => {
-  //   console.log("resize");
-  //   setSectionHeight(window.innerHeight);
-  // });
+    // clean up code
+    window.removeEventListener("wheel", onScroll);
+    window.removeEventListener("scroll", onScroll);
+    window.removeEventListener("resize", onScroll);
 
-  // useEffect(() => {
+    window.addEventListener("wheel", onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onResize);
 
-  // }, [currentSection]);
+    return () => {
+      window.removeEventListener("wheel", onScroll);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, [currentSection]);
 
   const handleMenuItemClick = (sectionId) =>
     setCurrentSection(sections.findIndex((s) => s.id === sectionId));
 
   return (
     <div className="h-[100vh] flex">
-      {/* <div className="fixed z-50 text-xl p-5 right-0 bg-black text-gray-400">
-        {currentSection}
-      </div> */}
-
       <div className="bg-black flex shrink-0 w-32 items-center justify-center">
         <HomeMenu
           onClick={handleMenuItemClick}
@@ -93,7 +88,8 @@ const Home = () => {
             key={index}
             className={classNames(
               "p-10",
-              section.dark ? "bg-black" : "bg-white"
+              section.dark ? "bg-black" : "bg-white",
+              index === currentSection ? "active" : ""
             )}
             style={{
               height: sectionHeight,

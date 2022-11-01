@@ -12,7 +12,7 @@ const HomeMenu = ({ items, currentSection, onClick }) => {
           <div
             className={classNames(
               "bg-white transition-all cursor-pointer h-1",
-              currentSection.id === item.id ? "w-10" : "w-6"
+              currentSection?.id === item.id ? "w-10" : "w-6"
             )}
           ></div>
         </div>
