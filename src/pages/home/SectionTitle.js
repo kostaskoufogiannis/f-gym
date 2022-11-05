@@ -2,10 +2,10 @@ import classNames from "classnames";
 
 const SectionTitle = ({ text, dark, active }) => {
   return (
-    <div className="section-title mb-10">
+    <div className="mb-5 section-title md:mb-10">
       <h1
         className={classNames(
-          "text-8xl font-bold mb-7",
+          "text-6xl font-bold mb-7 md:text-8xl",
           dark ? "text-white" : "text-black"
         )}
       >

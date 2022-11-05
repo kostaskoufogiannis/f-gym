@@ -6,11 +6,13 @@ import HomeMenu from "./HomeMenu";
 import Programs from "./sections/Programs";
 import Splash from "./sections/Splash";
 import "./home.css";
+import video from "../../assets/video.mp4";
 
 const sections = [
   { id: "splash", component: () => <Splash />, dark: true },
   { id: "programs", component: () => <Programs />, dark: true },
   { id: "about", component: () => <About />, dark: true },
+  { id: "gym", component: () => <Programs />, dark: true },
   { id: "contact", component: () => <Contact />, dark: true },
 ];
 
@@ -66,16 +68,28 @@ const Home = () => {
     setCurrentSection(sections.findIndex((s) => s.id === sectionId));
 
   return (
-    <div className="h-[100vh] flex">
-      <div className="bg-black flex shrink-0 w-32 items-center justify-center">
+    <div className="h-[100vh] relative">
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src={video}
+        autoPlay={true}
+        loop={true}
+        muted={true}
+      ></video>
+      <div className="absolute inset-0 w-full h-full bg-black bg-opacity-80"></div>
+
+      {/* menu */}
+      <div className="absolute z-20 left-1/2 bottom-5 transform -translate-x-1/2 md:left-5 md:top-1/2 md:translate-x-0 md:-translate-y-1/2 flex items-center justify-center">
         <HomeMenu
           onClick={handleMenuItemClick}
           items={sections}
           currentSection={sections[currentSection]}
         />
       </div>
+
       <div
-        className=""
+        className="ml-0 mb-32
+        . md:mb-0 md:ml-32 relative"
         style={{
           transition: `all ${transitionDurations}ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s`,
           transform: `translate3d(0, ${
@@ -87,15 +101,17 @@ const Home = () => {
           <div
             key={index}
             className={classNames(
-              "p-10",
-              section.dark ? "bg-black" : "bg-white",
+              "p-5 py-20 overflow-hidden",
+              // section.dark ? "bg-black" : "bg-white",
               index === currentSection ? "active" : ""
             )}
             style={{
               height: sectionHeight,
             }}
           >
-            {section?.component()}
+            <div className="flex items-center h-full">
+              {section?.component()}
+            </div>
           </div>
         ))}
       </div>
