@@ -1,11 +1,11 @@
 import Logo from "./Logo";
-import MenuIcon from "./MenuIcon";
+import Menu from "./Menu";
 
 const Header = () => {
   return (
-    <header className="fixed z-50 inset-0 w-full h-20 flex justify-between items-center px-6">
+    <header className="fixed inset-0 z-50 flex h-20 w-full items-center justify-between px-6">
       <Logo />
-      <MenuIcon />
+      <Menu />
     </header>
   );
 };

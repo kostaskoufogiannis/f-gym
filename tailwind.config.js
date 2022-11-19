@@ -6,6 +6,9 @@ module.exports = {
       boxShadow: {
         box: "-15px 15px 0 0 #000",
       },
+      borderRadius: {
+        "circle": "50%"
+      }
     },
   },
   plugins: [],

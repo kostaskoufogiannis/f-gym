@@ -3,15 +3,20 @@ import adinamia from "../../../assets/adinamia.jpg";
 
 const About = () => {
   return (
-    <div>
-      <SectionTitle text="Trainer" dark={true}></SectionTitle>
-      <div className="block relative md:flex md:flex-row-reverse md:items-center">
-        <div className="md:w-1/2 md:-mr-10">
-          <div className="transform -rotate-3 md:rotate-3 md:w-full md:max-w-2xl md:-ml-10">
-            <img src={adinamia} alt="trainer_photo" />
-          </div>
+    <div className="relative h-full w-full">
+      <div className="absolute top-16 left-1/2 z-0 h-1/2 w-10/12 -translate-x-1/2 transform overflow-hidden bg-black md:top-1/2 md:right-0 md:left-auto md:h-3/4 md:w-2/3 md:-translate-x-0 md:-translate-y-1/2">
+        <img
+          className="h-full w-full object-contain"
+          src={adinamia}
+          alt="trainer_photo"
+        />
+        <div className="fgym-image-cover bg-black">
+          <div className="fgym-image-cover-1 absolute inset-0 z-10 h-full w-0 bg-green-400"></div>
         </div>
-        <div className="bg-green-400 shadow-box text-black font-semibold text-lg z-10 absolute bottom-10 -mt-10 p-5 md:mt-0 md:static md:text-2xl md:w-1/2 md:max-w-2xl md:p-10 md:py-20">
+      </div>
+      <div className="absolute top-1/2 left-1/2 z-10 w-full -translate-x-1/2 transform md:-translate-y-1/2">
+        <SectionTitle text="Trainer"></SectionTitle>
+        <div className="max-w-xl text-lg tracking-wide text-white">
           Γεια, είμαι η Γαριφαλιά! Είμαι personal trainer, λάτρης της
           προπόνησης, των ταξιδιών και της φυσικής κατάστασης. Όποιος κι αν
           είναι ο στόχος σου στο κομμάτι του fitness μπορώ να σε βοηθήσω να τον
