@@ -143,7 +143,7 @@ const Home = () => {
 
       {/* background */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 flex h-full w-full items-center justify-center text-[27rem] font-bold text-white opacity-5"
+        className="pointer-events-none fixed inset-0 z-0 flex h-full w-full items-center justify-center text-[32vw] font-bold text-white opacity-5"
         style={{ transform: backgroundTransform }}
       >
         FGYM

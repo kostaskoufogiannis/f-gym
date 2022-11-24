@@ -8,21 +8,30 @@ const Menu = ({ dark = true }) => {
 
   return (
     <>
-      <div className="fixed right-6 z-50 cursor-pointer" onClick={handleClick}>
-        <div
-          className={classNames(
-            "mb-4 h-[3px] w-10 origin-left transition-transform",
-            dark ? "bg-white" : "bg-black",
-            menuStatus ? "rotate-45" : "rotate-0"
-          )}
-        ></div>
-        <div
-          className={classNames(
-            "h-[3px] w-10 origin-left transition-transform",
-            dark ? "bg-white" : "bg-black",
-            menuStatus ? "translate-y-0.5 -rotate-45" : "rotate-0"
-          )}
-        ></div>
+      <div
+        className="fixed right-6 z-50 flex h-10 w-10 cursor-pointer items-center"
+        onClick={handleClick}
+      >
+        <div>
+          <div
+            className={classNames(
+              "mb-4 h-[3px] w-10 origin-left transition-transform",
+              dark ? "bg-white" : "bg-black",
+              menuStatus
+                ? "translate-x-[6px] -translate-y-[4px] rotate-45"
+                : "rotate-0"
+            )}
+          ></div>
+          <div
+            className={classNames(
+              "h-[3px] w-10 origin-left transition-transform",
+              dark ? "bg-white" : "bg-black",
+              menuStatus
+                ? "translate-x-[6px] translate-y-[4px] -rotate-45"
+                : "rotate-0"
+            )}
+          ></div>
+        </div>
       </div>
       <div
         className={classNames(
