@@ -18,7 +18,8 @@ const Gym = () => {
       <div className="absolute top-1/2 left-1/2 z-10 w-full -translate-x-1/2 transform md:-translate-y-1/2">
         <SectionTitle text="Γυμναστήριο"></SectionTitle>
         <div className="mb-10 max-w-xl text-lg tracking-wide text-white">
-          Προγράμματα δύναμης, αντοχής, αποκατάστασης. EMS Miha
+          Πλήρως εξοπλισμένος χώρος που παρέχει τα κατάλληλα μέσα για μια σωστή
+          και ολοκληρωμένη προπόνηση.
         </div>
         <Button text="Περισσότερα"></Button>
       </div>

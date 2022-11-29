@@ -5,6 +5,7 @@ import SectionTitle from "../SectionTitle";
 import ImgEmom from "../../../assets/programs/program_emom.jpg";
 import ImgEms from "../../../assets/programs/program_ems.jpg";
 import ImgGroup from "../../../assets/programs/p_group.jpg";
+import Button from "../../../components/common/Button";
 
 const PROGRAMS = [
   {
@@ -31,77 +32,45 @@ const PROGRAMS = [
 ];
 
 const Programs = () => {
-  const programImage = useRef();
-  const [currentProgramIndex, setCurrentProgramIndex] = useState(0);
-  const [programs] = useState(PROGRAMS);
+  // const programImage = useRef();
+  // const [currentProgramIndex, setCurrentProgramIndex] = useState(0);
+  // const [programs] = useState(PROGRAMS);
 
-  const currentProgram = useMemo(
-    () => programs?.[currentProgramIndex],
-    [currentProgramIndex, programs]
-  );
+  // const currentProgram = useMemo(
+  //   () => programs?.[currentProgramIndex],
+  //   [currentProgramIndex, programs]
+  // );
 
-  const handleChangeProgram = (direction) => {
-    if (direction === -1) {
-      if (currentProgramIndex === 0)
-        setCurrentProgramIndex(programs?.length - 1);
-      else setCurrentProgramIndex((prev) => prev - 1);
-    } else {
-      if (currentProgramIndex === programs?.length - 1)
-        setCurrentProgramIndex(0);
-      else setCurrentProgramIndex((prev) => prev + 1);
-    }
-  };
+  // const handleChangeProgram = (direction) => {
+  //   if (direction === -1) {
+  //     if (currentProgramIndex === 0)
+  //       setCurrentProgramIndex(programs?.length - 1);
+  //     else setCurrentProgramIndex((prev) => prev - 1);
+  //   } else {
+  //     if (currentProgramIndex === programs?.length - 1)
+  //       setCurrentProgramIndex(0);
+  //     else setCurrentProgramIndex((prev) => prev + 1);
+  //   }
+  // };
 
   return (
-    <div className="relative flex h-full items-center">
-      {/* text */}
-      <div className="relative z-20 w-3/4 p-10 md:w-1/2">
-        <div className="relative z-10 mb-20">
-          <SectionTitle text="Προγράμματα"></SectionTitle>
-        </div>
-        <div className="relative flex flex-col text-2xl text-white">
-          <div className="mb-10 min-h-[20rem] flex-1">
-            <h3 className="mb-5 text-3xl font-bold text-green-400">
-              {currentProgram?.title}
-            </h3>
-            <p className="leading-10">{currentProgram?.description}</p>
-          </div>
-          <div className="flex gap-3">
-            <button onClick={() => handleChangeProgram(-1)}>
-              <div className="w-10 text-green-400">
-                <ArrowLeft />
-              </div>
-            </button>
-            <button onClick={() => handleChangeProgram(1)}>
-              <div className="w-10 text-green-400">
-                <ArrowRight />
-              </div>
-            </button>
-          </div>
+    <div className="relative h-full w-full">
+      <div className="absolute top-16 left-1/2 z-0 h-1/2 w-10/12 -translate-x-1/2 transform overflow-hidden bg-black md:top-1/2 md:right-0 md:left-auto md:h-3/4 md:w-2/3 md:-translate-x-0 md:-translate-y-1/2">
+        <img
+          className="h-full w-full object-cover"
+          src={ImgEms}
+          alt="trainer_photo"
+        />
+        <div className="fgym-image-cover bg-black">
+          <div className="fgym-image-cover-1 absolute inset-0 z-10 h-full w-0 bg-green-400"></div>
         </div>
       </div>
-
-      {/* image */}
-      <div ref={programImage} className="h-full overflow-hidden md:w-1/2">
-        <div
-          className="flex h-full w-full"
-          style={{
-            transition: `all 1000ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s`,
-            transform: `translate3d(${
-              currentProgramIndex * programImage?.current?.offsetWidth * -1
-            }px, 0, 0)`,
-          }}
-        >
-          {programs.map((p, index) => (
-            <div key={index} className="h-full w-full shrink-0">
-              <img
-                alt="program_image"
-                src={p.img}
-                className="h-full w-full object-cover"
-              />
-            </div>
-          ))}
+      <div className="absolute top-1/2 left-1/2 z-10 w-full -translate-x-1/2 transform md:-translate-y-1/2">
+        <SectionTitle text="Προγράμματα"></SectionTitle>
+        <div className="mb-10 max-w-xl text-lg tracking-wide text-white">
+          Ομαδικά, EMOM, EMS Miha, HIIT. Ειδικά προγράμματα για κάθε περίπτωση.
         </div>
+        <Button text="Περισσότερα"></Button>
       </div>
     </div>
   );
