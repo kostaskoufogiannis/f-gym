@@ -129,7 +129,7 @@ const Home = () => {
 
   return (
     <div
-      className="overflow-hidden- relative h-full overflow-auto"
+      className="relative h-full overflow-auto"
       onMouseMove={handleMouseMove}
     >
       {/* menu */}

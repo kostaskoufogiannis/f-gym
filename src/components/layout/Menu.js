@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-location";
 import classNames from "classnames";
 import { useState } from "react";
 
@@ -5,6 +6,8 @@ const Menu = ({ dark = true }) => {
   const [menuStatus, setMenuStatus] = useState(false);
 
   const handleClick = () => setMenuStatus((prev) => !prev);
+
+  const handleMenuItemClick = () => setMenuStatus(false);
 
   return (
     <>
@@ -40,21 +43,21 @@ const Menu = ({ dark = true }) => {
         )}
       >
         <div className="flex flex-col gap-8 text-center">
-          <a href="/" className="hover:line-through">
+          <Link onClick={handleMenuItemClick} to="/home">
             ΑΡΧΙΚΗ
-          </a>
-          <a href="/" className="hover:line-through">
+          </Link>
+          <Link onClick={handleMenuItemClick} to="about">
             TRAINER
-          </a>
-          <a href="/" className="hover:line-through">
-            ΠΡΟΓΡΑΜΜΑΤΑ
-          </a>
-          <a href="/" className="hover:line-through">
+          </Link>
+          <Link onClick={handleMenuItemClick} to="gym">
             ΓΥΜΝΑΣΤΗΡΙΟ
-          </a>
-          <a href="/" className="hover:line-through">
+          </Link>
+          <Link onClick={handleMenuItemClick} to="programs">
+            ΠΡΟΓΡΑΜΜΑΤΑ
+          </Link>
+          <Link onClick={handleMenuItemClick} to="home">
             ΕΠΙΚΟΙΝΩΝΙΑ
-          </a>
+          </Link>
         </div>
       </div>
     </>

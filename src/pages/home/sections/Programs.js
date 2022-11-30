@@ -1,11 +1,12 @@
 // import { useMemo, useRef, useState } from "react";
 // import { ArrowLeft } from "../../../components/icons/ArrowLeft";
 // import { ArrowRight } from "../../../components/icons/ArrowRight";
-import SectionTitle from "../SectionTitle";
 // import ImgEmom from "../../../assets/programs/program_emom.jpg";
-import ImgEms from "../../../assets/programs/program_ems.jpg";
 // import ImgGroup from "../../../assets/programs/p_group.jpg";
+import SectionTitle from "../SectionTitle";
+import ImgEms from "../../../assets/programs/program_ems.jpg";
 import Button from "../../../components/common/Button";
+import { useNavigate } from "@tanstack/react-location";
 
 // const PROGRAMS = [
 //   {
@@ -32,26 +33,8 @@ import Button from "../../../components/common/Button";
 // ];
 
 const Programs = () => {
-  // const programImage = useRef();
-  // const [currentProgramIndex, setCurrentProgramIndex] = useState(0);
-  // const [programs] = useState(PROGRAMS);
-
-  // const currentProgram = useMemo(
-  //   () => programs?.[currentProgramIndex],
-  //   [currentProgramIndex, programs]
-  // );
-
-  // const handleChangeProgram = (direction) => {
-  //   if (direction === -1) {
-  //     if (currentProgramIndex === 0)
-  //       setCurrentProgramIndex(programs?.length - 1);
-  //     else setCurrentProgramIndex((prev) => prev - 1);
-  //   } else {
-  //     if (currentProgramIndex === programs?.length - 1)
-  //       setCurrentProgramIndex(0);
-  //     else setCurrentProgramIndex((prev) => prev + 1);
-  //   }
-  // };
+  const navigate = useNavigate();
+  const handleClick = () => navigate({ to: "/programs", replace: true });
 
   return (
     <div className="relative h-full w-full">
@@ -70,7 +53,7 @@ const Programs = () => {
         <div className="mb-10 max-w-xl text-lg tracking-wide text-white">
           Ομαδικά, EMOM, EMS Miha, HIIT. Ειδικά προγράμματα για κάθε περίπτωση.
         </div>
-        <Button text="Περισσότερα"></Button>
+        <Button text="Περισσότερα" onClick={handleClick}></Button>
       </div>
     </div>
   );

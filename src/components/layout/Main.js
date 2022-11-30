@@ -1,9 +1,13 @@
-import Home from "../../pages/home/Home";
+import { Outlet, useRouter } from "@tanstack/react-location";
+import classNames from "classnames";
 
 const Main = () => {
+  const router = useRouter();
+  const isHome = router.state.location.pathname === "/home";
+
   return (
-    <div className="relative z-10 h-full">
-      <Home />
+    <div className={classNames("relative z-10 h-full", !isHome && "pt-20")}>
+      <Outlet />
     </div>
   );
 };

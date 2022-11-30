@@ -1,8 +1,5 @@
 const Button = ({ onClick, text }) => {
-  const handleClick = () => {
-    onClick();
-  };
-
+  const handleClick = () => onClick?.();
   return (
     <button
       type="button"
