@@ -1,4 +1,4 @@
-body {
+.fgym-bg {
     overflow: hidden;
     /* background: rgb(31, 31, 31); */
     background: radial-gradient(circle, rgba(31, 31, 31, 1) 0%, rgba(0, 0, 0, 1) 50%, rgba(26, 26, 26, 1) 100%);

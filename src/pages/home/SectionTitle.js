@@ -9,8 +9,8 @@ const SectionTitle = ({ text }) => {
         {text}
       </h1>
       <div className="lines">
-        <div className="mb-3 h-1 w-20 bg-green-400"></div>
-        <div className="ml-10 h-1 w-20 bg-green-400"></div>
+        <div className="mb-3 h-1 w-16 bg-green-400 md:w-20"></div>
+        <div className="ml-10 h-1 w-16 bg-green-400 md:w-20"></div>
       </div>
     </div>
   );
