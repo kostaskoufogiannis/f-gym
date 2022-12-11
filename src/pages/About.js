@@ -1,10 +1,15 @@
 import PageHeader from "./PageHeader";
-import trainer from "../assets/adinamia.jpg";
+import Img from "../assets/trainer.jpg";
+import ImgWIP from "../assets/cookie_about.png";
 
 const About = () => {
   return (
     <div>
-      <PageHeader img={trainer} title="Trainer" />
+      <PageHeader img={Img} title="Trainer" />
+
+      <div className="mx-auto mt-10 w-1/3 text-center">
+        <img className="h-full w-full object-cover" src={ImgWIP} alt="" />
+      </div>
     </div>
   );
 };

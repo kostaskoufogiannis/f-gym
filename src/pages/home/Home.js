@@ -10,8 +10,8 @@ import "./home.css";
 
 const sections = [
   { id: "splash", component: () => <Splash />, dark: true },
-  { id: "programs", component: () => <Programs />, dark: true },
   { id: "about", component: () => <About />, dark: true },
+  { id: "programs", component: () => <Programs />, dark: true },
   { id: "gym", component: () => <Gym />, dark: true },
   { id: "contact", component: () => <Contact />, dark: true },
 ];
@@ -141,12 +141,25 @@ const Home = () => {
         />
       </div>
 
+      {/* <ScrollDown /> */}
+
       {/* background */}
-      <div
+      {/* <div
         className="pointer-events-none fixed inset-0 z-0 flex h-full w-full items-center justify-center text-[32vw] font-bold text-white opacity-5"
         style={{ transform: backgroundTransform }}
       >
         FGYM
+      </div> */}
+
+      {/* background */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0 flex h-full w-full items-center justify-center"
+        style={{ transform: backgroundTransform }}
+      >
+        <span className="fgym-letter letter-f">F</span>
+        <span className="fgym-letter letter-g">G</span>
+        <span className="fgym-letter letter-y">Y</span>
+        <span className="fgym-letter letter-m">M</span>
       </div>
 
       <div
@@ -173,7 +186,6 @@ const Home = () => {
           </div>
         ))}
       </div>
-      {/* <div className="h-1 bg-gray-700"></div> */}
     </div>
   );
 };
