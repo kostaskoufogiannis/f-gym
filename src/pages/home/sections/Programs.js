@@ -1,36 +1,7 @@
-// import { useMemo, useRef, useState } from "react";
-// import { ArrowLeft } from "../../../components/icons/ArrowLeft";
-// import { ArrowRight } from "../../../components/icons/ArrowRight";
-// import ImgEmom from "../../../assets/programs/program_emom.jpg";
-// import ImgGroup from "../../../assets/programs/p_group.jpg";
 import SectionTitle from "../SectionTitle";
 import Img from "../../../assets/programs.jpg";
 import Button from "../../../components/common/Button";
 import { useNavigate } from "@tanstack/react-location";
-
-// const PROGRAMS = [
-//   {
-//     id: "group",
-//     title: "ΟΜΑΔΙΚΟ",
-//     description:
-//       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-//     img: ImgGroup,
-//   },
-//   {
-//     id: "ems",
-//     title: "EMS",
-//     description:
-//       "Το Miha Bodytec είναι η κορυφαία προπονητική μονάδα στον χώρο της ηλεκτρομυοδιέγερσης (EMS) που γυμνάζει ταυτόχρονα όλες τις μυικές ομάδες μέσα σε 20 λεπτά.",
-//     img: ImgEms,
-//   },
-//   {
-//     id: "emom",
-//     title: "EMOM",
-//     description:
-//       "Οι προπονήσεις EMOM μπορούν να κάνουν focus στην αντοχή ή περισσότερο στη δύναμη. Μία προπόνηση EMOM μπορεί να γίνει με το βάρος του σώματος ή να έχει εξοπλισμό, ανάλογα με τους στόχους σου.",
-//     img: ImgEmom,
-//   },
-// ];
 
 const Programs = () => {
   const navigate = useNavigate();

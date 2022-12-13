@@ -7,7 +7,7 @@ const About = () => {
     <div>
       <PageHeader img={Img} title="Trainer" />
 
-      <div className="mx-auto mt-10 w-1/3 text-center">
+      <div className="mx-auto mt-10 w-2/3 max-w-xl text-center md:w-full">
         <img className="h-full w-full object-cover" src={ImgWIP} alt="" />
       </div>
     </div>

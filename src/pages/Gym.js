@@ -7,11 +7,11 @@ const Gym = () => {
     <div>
       <PageHeader img={Img} title="Γυμναστήριο" />
 
-      <div className="mx-auto mt-10 w-3/4 text-center">
-        <div className="mb-10">
-          Δεν είμαστε ακόμα έτοιμοι, <br /> ελάτε σε λίγο!
-        </div>
+      <div className="mx-auto mt-10 w-2/3 max-w-xl text-center md:w-full">
         <img className="h-full w-full object-cover" src={ImgWIP} alt="" />
+        <div className="mt-5 text-2xl font-bold">
+          Δεν είμαστε ακόμα έτοιμοι. <br /> Δουλεύουμε σκληρά όμως!
+        </div>
       </div>
     </div>
   );
