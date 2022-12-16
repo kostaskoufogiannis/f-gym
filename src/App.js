@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/layout/Header";
 import Main from "./components/layout/Main";
 import AppRouter from "./pages/AppRouter";
+import "./Snow.js";
 
 const App = () => {
   return (
