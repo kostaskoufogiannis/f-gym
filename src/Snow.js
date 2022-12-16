@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-expressions */
-
 /** @license
 
  DHTML Snowstorm! JavaScript-based snow for web pages
@@ -64,6 +62,7 @@ setTimeout(() => {
       t = !1,
       w = !1,
       u;
+
     a: {
       try {
         f.createElement("div").style.opacity = "0.5";
@@ -73,8 +72,10 @@ setTimeout(() => {
       }
       u = !0;
     }
+
     var B = !1,
       C = f.createDocumentFragment();
+
     q = (function () {
       function c(b) {
         g.setTimeout(b, 1e3 / (a.animationInterval || 20));
@@ -117,6 +118,7 @@ setTimeout(() => {
       h = null;
       return e;
     })();
+
     this.timer = null;
     this.flakes = [];
     this.active = this.disabled = !1;
