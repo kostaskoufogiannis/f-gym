@@ -8,17 +8,15 @@ const Logo = ({ dark = true }) => {
 
   return (
     <div
-      className="relative flex cursor-pointer select-none text-3xl font-bold"
+      className="relative flex cursor-pointer select-none gap-2 text-3xl font-bold text-white"
       onClick={handleClick}
     >
-      <span className="text-green-400">F</span>
-      <span className={classNames(dark ? "text-white" : "text-black")}>
-        GYM
-      </span>
+      <span>εὖ</span>
+      <span>gym</span>
       <img
         src={ImgSanta}
         alt="santa hat"
-        className="absolute left-full -translate-x-4 -translate-y-2 transform"
+        className="absolute left-full -translate-x-4 transform"
       />
     </div>
   );

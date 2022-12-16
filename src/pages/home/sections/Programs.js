@@ -22,7 +22,7 @@ const Programs = () => {
       <div className="absolute top-1/2 left-1/2 z-10 w-full -translate-x-1/2 transform md:-translate-y-1/2">
         <SectionTitle text="Προγράμματα"></SectionTitle>
         <div className="mb-10 max-w-xl text-lg tracking-wide text-white">
-          Ομαδικά, EMOM, EMS Miha, HIIT. Ειδικά προγράμματα για κάθε περίπτωση.
+          Semi Personal Training, EMS Training, Pilates.
         </div>
         <Button text="Περισσότερα" onClick={handleClick}></Button>
       </div>

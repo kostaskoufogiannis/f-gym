@@ -13,13 +13,24 @@ const Splash = () => {
             <br />
             if you don't <br /> make one.
           </div>
+          {/* <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1258.562"
+            height="525.691"
+            viewBox="0 0 1258.562 525.691"
+            className="absolute bottom-0"
+          >
+            <path
+              class="path"
+              d="M148.632,510.055H780.587L851.16,248.077l93.029,522.886L1051.119,432h356.076"
+              transform="translate(-148.632 -246.776)"
+              fill="none"
+              stroke="#fff"
+              stroke-width="10"
+            />
+          </svg> */}
         </div>
       </div>
-      {/* <img
-        src={Img}
-        alt=""
-        className="absolute right-0 top-1/2 h-[70vh] -translate-y-1/2 transform"
-      /> */}
       <ScrollDown />
     </div>
   );
