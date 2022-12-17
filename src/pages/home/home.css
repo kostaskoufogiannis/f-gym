@@ -56,7 +56,7 @@
 }
 
 .letter-f {
-    transform: rotate(-20deg) translateY(-12%) translateX(200%);
+    transform: rotate(-20deg) translateY(-10%) translateX(100%);
 }
 .letter-g {
     transform: rotate(20deg) translateY(-40%) translateX(100%);

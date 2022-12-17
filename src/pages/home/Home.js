@@ -112,11 +112,6 @@ const Home = () => {
     const movementXPerc = event.clientX / screenWidth;
     const maxMovementX = 20;
     const maxMovementY = 20;
-    // const distance = Math.hypot(
-    //   event.x - previousEndPointX.current,
-    //   event.y - previousEndPointY.current
-    // );
-
     previousEndPointX.current = event.x;
     previousEndPointY.current = event.y;
 
@@ -144,22 +139,14 @@ const Home = () => {
       {/* <ScrollDown /> */}
 
       {/* background */}
-      {/* <div
-        className="pointer-events-none fixed inset-0 z-0 flex h-full w-full items-center justify-center text-[32vw] font-bold text-white opacity-5"
-        style={{ transform: backgroundTransform }}
-      >
-        FGYM
-      </div> */}
-
-      {/* background */}
       <div
         className="pointer-events-none fixed inset-0 z-0 flex h-full w-full items-center justify-center"
         style={{ transform: backgroundTransform }}
       >
-        <span className="fgym-letter letter-f">F</span>
-        <span className="fgym-letter letter-g">G</span>
-        <span className="fgym-letter letter-y">Y</span>
-        <span className="fgym-letter letter-m">M</span>
+        <span className="fgym-letter letter-f">εὖ</span>
+        <span className="fgym-letter letter-g">g</span>
+        <span className="fgym-letter letter-y">y</span>
+        <span className="fgym-letter letter-m">m</span>
       </div>
 
       <div
